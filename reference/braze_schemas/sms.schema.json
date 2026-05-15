@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chef-drop-brief/braze/sms.schema.json",
+  "title": "Braze SMS Campaign (Curated Sends, minimal)",
+  "type": "object",
+  "required": ["channel", "campaign_name", "body", "audience"],
+  "properties": {
+    "channel": { "const": "sms" },
+    "campaign_name": { "type": "string", "minLength": 1 },
+    "body": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "shortlink_placeholder": { "type": "string" },
+    "audience": {
+      "type": "object",
+      "required": ["segment_id"],
+      "properties": {
+        "segment_id": { "type": "string" },
+        "segment_display_name": { "type": "string" },
+        "estimated_size": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "send_at": { "type": "string", "format": "date-time" },
+    "send_at_rationale": { "type": "string" }
+  },
+  "additionalProperties": false
+}

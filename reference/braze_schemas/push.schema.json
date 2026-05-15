@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chef-drop-brief/braze/push.schema.json",
+  "title": "Braze Push Campaign (Curated Sends, minimal)",
+  "type": "object",
+  "required": ["channel", "campaign_name", "title", "body", "audience"],
+  "properties": {
+    "channel": { "const": "push" },
+    "campaign_name": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 50 },
+    "body": { "type": "string", "minLength": 1, "maxLength": 90 },
+    "deep_link": { "type": "string" },
+    "audience": {
+      "type": "object",
+      "required": ["segment_id"],
+      "properties": {
+        "segment_id": { "type": "string" },
+        "segment_display_name": { "type": "string" },
+        "estimated_size": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "send_at": { "type": "string", "format": "date-time" },
+    "send_at_rationale": { "type": "string" }
+  },
+  "additionalProperties": false
+}

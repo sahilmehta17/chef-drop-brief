@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+develop-eggs/
+.installed.cfg
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.cache/
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Skill cache (created at first eval run)
+.chef_drop_brief_cache/

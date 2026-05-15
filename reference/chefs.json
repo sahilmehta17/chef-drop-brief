@@ -1,0 +1,444 @@
+{
+  "chefs": {
+    "maya_patel": {
+      "name": "Maya Patel",
+      "cuisine": "Modern Indian",
+      "credentials": [
+        "James Beard Foundation Award (Rising Star Chef, 2023)",
+        "Former Sous Chef at Junoon"
+      ],
+      "bio": "Mumbai-born, Brooklyn-based. Builds plant-forward, protein-balanced menus that lean into spice without leaning on cream.",
+      "dietary_tags": ["glp1_friendly", "high_protein", "vegetarian_options"],
+      "menu": [
+        {
+          "name": "Tandoori Cauliflower Steak with Coconut Yogurt",
+          "ingredients": ["cauliflower", "coconut yogurt", "mustard oil", "ginger", "cumin"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 380,
+          "protein_g": 18
+        },
+        {
+          "name": "Saag Paneer Power Bowl",
+          "ingredients": ["spinach", "paneer", "quinoa", "fenugreek"],
+          "allergen_safe": [],
+          "calories": 420,
+          "protein_g": 24
+        },
+        {
+          "name": "Chickpea & Sweet Potato Curry",
+          "ingredients": ["chickpea", "sweet potato", "tomato", "coconut milk", "curry leaf"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 360,
+          "protein_g": 14
+        },
+        {
+          "name": "Spiced Lentil Kofta with Tomato-Fennel",
+          "ingredients": ["red lentil", "fennel", "tomato", "coriander"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 340,
+          "protein_g": 16
+        },
+        {
+          "name": "Cumin-Lime Grilled Shrimp Salad",
+          "ingredients": ["shrimp", "romaine", "lime", "cumin", "mint"],
+          "allergen_safe": ["dairy_free", "gluten_free"],
+          "calories": 290,
+          "protein_g": 28
+        },
+        {
+          "name": "Masala Roasted Eggplant",
+          "ingredients": ["eggplant", "yogurt", "garam masala", "mint"],
+          "allergen_safe": ["gluten_free"],
+          "calories": 310,
+          "protein_g": 12
+        }
+      ],
+      "hero_image_alt": "Chef Maya Patel plating a tandoori cauliflower steak"
+    },
+    "tomas_vega": {
+      "name": "Tomás Vega",
+      "cuisine": "Mexican",
+      "credentials": [
+        "Michelin Bib Gourmand (Cosme alumni)",
+        "Featured on Netflix's Taco Chronicles, Season 3"
+      ],
+      "bio": "Oaxaca-trained, Austin-based. Treats salsa like a base note, not a finishing touch — every dish is built on a stone-ground sauce.",
+      "dietary_tags": ["high_protein", "carnivore_friendly", "gluten_free_options"],
+      "menu": [
+        {
+          "name": "Smoked Brisket Tinga Bowl",
+          "ingredients": ["beef brisket", "chipotle", "black bean", "lime crema", "cotija"],
+          "allergen_safe": ["gluten_free"],
+          "calories": 540,
+          "protein_g": 38
+        },
+        {
+          "name": "Carnitas Lettuce Cups with Pickled Onion",
+          "ingredients": ["pork shoulder", "orange", "bay leaf", "butter lettuce", "red onion"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 460,
+          "protein_g": 34
+        },
+        {
+          "name": "Pollo Asado with Charred Salsa Verde",
+          "ingredients": ["chicken thigh", "tomatillo", "serrano", "cilantro"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 410,
+          "protein_g": 36
+        },
+        {
+          "name": "Short Rib Birria with Consommé",
+          "ingredients": ["beef short rib", "guajillo", "ancho", "cumin"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 580,
+          "protein_g": 42
+        },
+        {
+          "name": "Cochinita Pibil with Habanero Slaw",
+          "ingredients": ["pork shoulder", "achiote", "sour orange", "cabbage", "habanero"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 510,
+          "protein_g": 36
+        },
+        {
+          "name": "Grilled Carne Asada Plate",
+          "ingredients": ["skirt steak", "lime", "garlic", "black bean"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 520,
+          "protein_g": 40
+        }
+      ],
+      "hero_image_alt": "Chef Tomás Vega ladling consommé over short rib birria"
+    },
+    "anya_petrov": {
+      "name": "Anya Petrov",
+      "cuisine": "Mediterranean",
+      "credentials": [
+        "Star Chefs Rising Star (Coastal Mediterranean, 2024)",
+        "Former Chef de Cuisine at Estia"
+      ],
+      "bio": "Sofia-born, raised in Thessaloniki. Cooks like every grandmother in the Eastern Med is watching — olive oil first, butter never.",
+      "dietary_tags": ["pescatarian", "mediterranean_diet", "high_protein"],
+      "menu": [
+        {
+          "name": "Whole Roasted Branzino with Lemon-Caper",
+          "ingredients": ["branzino", "lemon", "caper", "fennel", "olive oil"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 420,
+          "protein_g": 38
+        },
+        {
+          "name": "Charred Octopus & White Bean Salad",
+          "ingredients": ["octopus", "cannellini bean", "preserved lemon", "parsley"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 380,
+          "protein_g": 32
+        },
+        {
+          "name": "Seared Sea Bass with Tomato-Olive Relish",
+          "ingredients": ["sea bass", "kalamata olive", "tomato", "oregano"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 360,
+          "protein_g": 34
+        },
+        {
+          "name": "Greek Farro Bowl with Lemon-Tahini",
+          "ingredients": ["farro", "cucumber", "tomato", "tahini", "chickpea"],
+          "allergen_safe": ["vegan"],
+          "calories": 420,
+          "protein_g": 16
+        },
+        {
+          "name": "Grilled Sardines with Herbed Yogurt",
+          "ingredients": ["sardine", "yogurt", "dill", "mint", "lemon"],
+          "allergen_safe": ["gluten_free"],
+          "calories": 340,
+          "protein_g": 28
+        },
+        {
+          "name": "Salmon Kibbeh with Cucumber-Mint",
+          "ingredients": ["salmon", "bulgur", "mint", "cucumber"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 400,
+          "protein_g": 30
+        }
+      ],
+      "hero_image_alt": "Chef Anya Petrov filleting a whole-roasted branzino tableside"
+    },
+    "marcus_hale": {
+      "name": "Marcus Hale",
+      "cuisine": "Modern Southern BBQ",
+      "credentials": [
+        "Food & Wine 'Best New Chef' (2022)",
+        "Pitmaster at Hale's Smokehouse, Nashville"
+      ],
+      "bio": "Memphis-raised, Nashville-based. Treats brisket like a discipline and sides like the main event. Loud rubs, quiet sugars.",
+      "dietary_tags": ["high_protein", "athlete_focused", "carnivore_friendly"],
+      "menu": [
+        {
+          "name": "Hickory-Smoked Brisket with Burnt-End Beans",
+          "ingredients": ["beef brisket", "navy bean", "smoked paprika", "molasses"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 560,
+          "protein_g": 44
+        },
+        {
+          "name": "Dry-Rub Smoked Chicken with Slaw",
+          "ingredients": ["chicken thigh", "smoked paprika", "cabbage", "apple cider vinegar"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 430,
+          "protein_g": 40
+        },
+        {
+          "name": "Pulled Pork Power Bowl with Quinoa",
+          "ingredients": ["pork shoulder", "quinoa", "pickled red onion", "mustard greens"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 500,
+          "protein_g": 38
+        },
+        {
+          "name": "Blackened Catfish with Dirty Rice",
+          "ingredients": ["catfish", "rice", "celery", "andouille", "cajun spice"],
+          "allergen_safe": [],
+          "calories": 470,
+          "protein_g": 32
+        },
+        {
+          "name": "Grilled Tri-Tip with Charred Broccolini",
+          "ingredients": ["beef tri-tip", "broccolini", "garlic", "olive oil"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 510,
+          "protein_g": 42
+        },
+        {
+          "name": "Smoked Turkey Breast with Collards",
+          "ingredients": ["turkey breast", "collard greens", "smoked paprika"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 380,
+          "protein_g": 44
+        }
+      ],
+      "hero_image_alt": "Chef Marcus Hale slicing brisket against the grain"
+    },
+    "yuki_tanaka": {
+      "name": "Yuki Tanaka",
+      "cuisine": "Japanese Izakaya",
+      "credentials": [
+        "Michelin Plate Distinction (Hidden Sake, NYC, 2021–2024)",
+        "Tokyo Tsuji Culinary alumna"
+      ],
+      "bio": "Trained in Osaka, sharpened in New York. Builds low-carb donburi the way a sushi chef builds nigiri — one decisive layer at a time.",
+      "dietary_tags": ["low_carb", "high_protein", "pescatarian_options"],
+      "menu": [
+        {
+          "name": "Salmon Teriyaki Donburi over Cauliflower Rice",
+          "ingredients": ["salmon", "cauliflower rice", "soy", "ginger", "scallion"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 380,
+          "protein_g": 34
+        },
+        {
+          "name": "Miso-Glazed Black Cod with Daikon",
+          "ingredients": ["black cod", "white miso", "mirin", "daikon"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 360,
+          "protein_g": 28
+        },
+        {
+          "name": "Yakitori Chicken Skewers with Shishito",
+          "ingredients": ["chicken thigh", "shishito pepper", "tare", "sesame"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 340,
+          "protein_g": 32
+        },
+        {
+          "name": "Negi-Shio Pork with Charred Cabbage",
+          "ingredients": ["pork loin", "scallion", "sea salt", "cabbage"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 410,
+          "protein_g": 36
+        },
+        {
+          "name": "Tuna Tataki with Ponzu Greens",
+          "ingredients": ["ahi tuna", "ponzu", "wakame", "mizuna"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 280,
+          "protein_g": 30
+        },
+        {
+          "name": "Ginger-Soy Tofu with Cauliflower Rice",
+          "ingredients": ["tofu", "cauliflower rice", "ginger", "soy", "scallion"],
+          "allergen_safe": ["vegan", "dairy_free"],
+          "calories": 300,
+          "protein_g": 20
+        }
+      ],
+      "hero_image_alt": "Chef Yuki Tanaka assembling a salmon donburi over cauliflower rice"
+    },
+    "camille_roux": {
+      "name": "Camille Roux",
+      "cuisine": "French Bistro",
+      "credentials": [
+        "Le Cordon Bleu Paris (Grand Diplôme, 2018)",
+        "Former Chef de Partie at Le Coucou, NYC"
+      ],
+      "bio": "Lyon-born, Brooklyn-based. Cooks weeknight bistro — sheet pans, braises, a single saucier's spoon. Treats family dinner like a discipline.",
+      "dietary_tags": ["family_friendly", "comfort", "balanced"],
+      "menu": [
+        {
+          "name": "Sheet-Pan Chicken Provençal with Olives",
+          "ingredients": ["chicken thigh", "tomato", "kalamata olive", "thyme"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 440,
+          "protein_g": 36
+        },
+        {
+          "name": "Beef Daube with Buttered Egg Noodles",
+          "ingredients": ["beef chuck", "red wine", "carrot", "egg noodle", "butter"],
+          "allergen_safe": [],
+          "calories": 560,
+          "protein_g": 32
+        },
+        {
+          "name": "Salmon en Papillote with Leeks",
+          "ingredients": ["salmon", "leek", "lemon", "fennel"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 380,
+          "protein_g": 30
+        },
+        {
+          "name": "Croque-Style Turkey & Gruyère Bake",
+          "ingredients": ["turkey breast", "gruyère", "sourdough", "dijon"],
+          "allergen_safe": [],
+          "calories": 510,
+          "protein_g": 38
+        },
+        {
+          "name": "Ratatouille with Crisped Polenta",
+          "ingredients": ["eggplant", "zucchini", "tomato", "polenta", "basil"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 360,
+          "protein_g": 10
+        },
+        {
+          "name": "Mustard-Roast Pork Tenderloin with Apples",
+          "ingredients": ["pork tenderloin", "dijon", "apple", "shallot", "thyme"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 420,
+          "protein_g": 38
+        }
+      ],
+      "hero_image_alt": "Chef Camille Roux pulling a sheet-pan chicken Provençal from the oven"
+    },
+    "aisha_bello": {
+      "name": "Aisha Bello",
+      "cuisine": "West African (Nigerian/Senegalese)",
+      "credentials": [
+        "World 50 Best Discovery (2024)",
+        "Founder of Yaji Kitchen, London"
+      ],
+      "bio": "Lagos-born, Dakar-trained, London-based. Builds plant-forward West African plates with the spice-forward backbone of suya and the slow-build of yassa.",
+      "dietary_tags": ["plant_based", "vegan", "high_fiber"],
+      "menu": [
+        {
+          "name": "Jollof Cauliflower Rice with Roasted Tomato",
+          "ingredients": ["cauliflower rice", "tomato", "scotch bonnet", "thyme", "smoked paprika"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 320,
+          "protein_g": 10
+        },
+        {
+          "name": "Suya-Spiced Tofu Skewers with Yaji",
+          "ingredients": ["tofu", "peanut", "ginger", "scotch bonnet", "yaji spice"],
+          "allergen_safe": ["vegan"],
+          "calories": 340,
+          "protein_g": 24
+        },
+        {
+          "name": "Senegalese Mafé with Sweet Potato",
+          "ingredients": ["peanut", "sweet potato", "tomato", "cabbage", "okra"],
+          "allergen_safe": ["vegan"],
+          "calories": 420,
+          "protein_g": 14
+        },
+        {
+          "name": "Yassa-Style Tempeh with Caramelized Onion",
+          "ingredients": ["tempeh", "onion", "mustard", "lemon", "olive oil"],
+          "allergen_safe": ["vegan"],
+          "calories": 380,
+          "protein_g": 26
+        },
+        {
+          "name": "Egusi Stew with Bitter Leaf",
+          "ingredients": ["pumpkin seed", "bitter leaf", "tomato", "scotch bonnet"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 360,
+          "protein_g": 18
+        },
+        {
+          "name": "Plantain & Black-Eyed Pea Bowl",
+          "ingredients": ["plantain", "black-eyed pea", "tomato", "scallion"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 410,
+          "protein_g": 16
+        }
+      ],
+      "hero_image_alt": "Chef Aisha Bello plating jollof cauliflower rice with charred tomato"
+    },
+    "diego_sanchez": {
+      "name": "Diego Sánchez",
+      "cuisine": "Peruvian",
+      "credentials": [
+        "World 50 Best 'One to Watch' (2023)",
+        "Former Sous Chef at Central, Lima"
+      ],
+      "bio": "Lima-born, Mexico City-trained. Treats the Andes pantry like a paint palette — quinoa, aji, citrus, and seafood that has business being on the plate.",
+      "dietary_tags": ["high_protein", "foodie_forward", "pescatarian_options"],
+      "menu": [
+        {
+          "name": "Aji-Amarillo Sea Bass Ceviche",
+          "ingredients": ["sea bass", "aji amarillo", "lime", "red onion", "sweet potato"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 320,
+          "protein_g": 30
+        },
+        {
+          "name": "Lomo Saltado with Quinoa",
+          "ingredients": ["sirloin", "quinoa", "soy", "red onion", "tomato"],
+          "allergen_safe": ["dairy_free"],
+          "calories": 510,
+          "protein_g": 40
+        },
+        {
+          "name": "Andean Quinoa Causa with Avocado",
+          "ingredients": ["quinoa", "yellow potato", "avocado", "aji amarillo"],
+          "allergen_safe": ["vegan", "gluten_free"],
+          "calories": 380,
+          "protein_g": 12
+        },
+        {
+          "name": "Chicken Aji-Verde with Charred Corn",
+          "ingredients": ["chicken thigh", "huacatay", "lime", "corn"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 420,
+          "protein_g": 36
+        },
+        {
+          "name": "Tiradito of Salmon with Aji-Rocoto",
+          "ingredients": ["salmon", "aji rocoto", "lime", "sea salt"],
+          "allergen_safe": ["gluten_free", "dairy_free"],
+          "calories": 300,
+          "protein_g": 28
+        },
+        {
+          "name": "Vegetarian Aji de Quinoa",
+          "ingredients": ["quinoa", "aji amarillo", "spinach", "walnut"],
+          "allergen_safe": ["vegetarian", "gluten_free"],
+          "calories": 400,
+          "protein_g": 18
+        }
+      ],
+      "hero_image_alt": "Chef Diego Sánchez spooning aji-amarillo over sea bass ceviche"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "segments": {
+    "glp1_active": {
+      "display_name": "GLP-1 Active Subscribers",
+      "description": "Subscribers who selected the GLP-1 filter or added 3+ GLP-1-tagged meals in the last 4 weeks. High intent for high-protein, lower-calorie, satiating meals.",
+      "size_estimate": 47000,
+      "channel_preferences": ["email", "push"],
+      "tone_hints": ["satiating", "protein-forward", "smart portions", "no compromise"],
+      "constraints": ["no medical claims", "no guaranteed weight loss language", "no 'cure' framing"]
+    },
+    "foodies_lapsed_60d": {
+      "display_name": "Foodies — Lapsed 60d",
+      "description": "Identified as Foodie persona via past order patterns (variety of cuisines, premium-tier dishes). Last order >=60 days ago. Re-engagement target.",
+      "size_estimate": 19000,
+      "channel_preferences": ["email"],
+      "tone_hints": ["adventurous", "what they're missing", "name a chef they loved"],
+      "constraints": ["no discount-first framing", "lead with the chef, not the price"]
+    },
+    "athletes_high_protein": {
+      "display_name": "Athletes — High Protein Cohort",
+      "description": "Subscribers in the Athletes lifestyle bucket. Filter on 25g+ protein per meal. Train logs not available; assume general fitness.",
+      "size_estimate": 31000,
+      "channel_preferences": ["push", "sms"],
+      "tone_hints": ["fuel", "macros that earn their place", "no fluff"],
+      "constraints": ["no specific macros unless on dish card", "no medical/performance claims"]
+    },
+    "families_kids_friendly": {
+      "display_name": "Families — Kids-Friendly Plan",
+      "description": "Households with kids-friendly filter active. Weeknight dinner focus, larger plan sizes (8/12/16).",
+      "size_estimate": 22000,
+      "channel_preferences": ["email"],
+      "tone_hints": ["weeknight rescue", "kid-tested", "less hassle"],
+      "constraints": ["no choking-hazard mentions for under-3", "no peanut content without allergen flag"]
+    },
+    "better_than_takeout_winback": {
+      "display_name": "Better Than Takeout — Winback",
+      "description": "Lapsed subscribers who originally signed up via the 'Better Than Takeout' acquisition path. Compare against a takeout night frame.",
+      "size_estimate": 14000,
+      "channel_preferences": ["email", "sms"],
+      "tone_hints": ["takeout-tier convenience", "restaurant-tier quality", "fraction of the price"],
+      "constraints": ["never name a competitor takeout brand", "no 'cheap' language"]
+    },
+    "carnivore_premium": {
+      "display_name": "Carnivore Premium",
+      "description": "High-AOV subscribers who consistently order beef, pork, and lamb-forward dishes. Premium tier; avoid plant-forward framing.",
+      "size_estimate": 11000,
+      "channel_preferences": ["email", "push"],
+      "tone_hints": ["fire", "char", "ribcage-forward"],
+      "constraints": ["no vegan or plant-based framing", "no 'guilt-free' framing"]
+    }
+  }
+}

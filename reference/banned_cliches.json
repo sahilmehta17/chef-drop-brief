@@ -1,0 +1,45 @@
+{
+  "banned_cliches": {
+    "sanitized_dtc_food": [
+      "elevate your dinner experience",
+      "elevate your evening",
+      "elevate your weeknight",
+      "indulge your senses",
+      "tantalize your taste buds",
+      "experience the artistry",
+      "discover the difference",
+      "experience the difference",
+      "a culinary journey",
+      "a journey of flavors",
+      "a symphony of flavors",
+      "a dance of flavors"
+    ],
+    "stale_dtc_promo": [
+      "act now",
+      "limited time only — order today",
+      "don't miss out",
+      "while supplies last",
+      "unlock exclusive savings",
+      "transform your routine",
+      "the ultimate solution",
+      "game-changer",
+      "game changing"
+    ],
+    "ai_generated_tells": [
+      "in today's fast-paced world",
+      "look no further",
+      "at the end of the day",
+      "the perfect blend",
+      "perfectly balanced",
+      "carefully curated",
+      "thoughtfully crafted to perfection",
+      "an unforgettable experience",
+      "a feast for the senses",
+      "delight in",
+      "savor every bite",
+      "every bite tells a story",
+      "where flavor meets perfection",
+      "redefining"
+    ]
+  }
+}

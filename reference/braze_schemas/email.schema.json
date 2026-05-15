@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chef-drop-brief/braze/email.schema.json",
+  "title": "Braze Email Campaign (Curated Sends, minimal)",
+  "type": "object",
+  "required": ["channel", "campaign_name", "subject", "from", "html_body", "plain_body", "audience"],
+  "properties": {
+    "channel": { "const": "email" },
+    "campaign_name": { "type": "string", "minLength": 1 },
+    "subject": {
+      "type": "object",
+      "required": ["variants"],
+      "properties": {
+        "variants": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": { "type": "string", "minLength": 1, "maxLength": 120 }
+        },
+        "split": { "type": "string", "enum": ["even", "weighted"], "default": "even" }
+      }
+    },
+    "from": {
+      "type": "object",
+      "required": ["email", "name"],
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "preheader": { "type": "string", "maxLength": 150 },
+    "html_body": { "type": "string", "minLength": 1 },
+    "plain_body": { "type": "string", "minLength": 1 },
+    "cta": {
+      "type": "object",
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "url": { "type": "string" }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "required": ["segment_id"],
+      "properties": {
+        "segment_id": { "type": "string", "minLength": 1 },
+        "segment_display_name": { "type": "string" },
+        "estimated_size": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "send_at": { "type": "string", "format": "date-time" },
+    "send_at_rationale": { "type": "string" }
+  },
+  "additionalProperties": false
+}
