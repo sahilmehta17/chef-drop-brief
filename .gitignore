@@ -35,3 +35,7 @@ htmlcov/
 
 # Skill cache (created at first eval run)
 .chef_drop_brief_cache/
+
+# Scratch files written by the skill flow (load_context -> .tmp_ctx.json,
+# brief drafts -> .tmp_brief.json). Deleted at session end; never committed.
+.tmp_*.json

@@ -53,9 +53,23 @@ EvalFn = Callable[[dict, dict], EvalResult]
 
 _WORD_RE = re.compile(r"[A-Za-z0-9]+")
 
+# Small stopword set, stripped when computing fact-vs-source token overlap.
+# Kept tight on purpose: only function words that inflate the denominator
+# without adding signal. Content words ("protein", "dish", "chef") still count.
+_STOPWORDS = frozenset({
+    "and", "of", "the", "a", "an", "in", "on", "at", "to",
+    "for", "with", "or", "is", "was", "are", "were", "be", "by",
+    "as", "that", "this",
+})
+
 
 def _tokens(text: str) -> set[str]:
     return {m.group(0).lower() for m in _WORD_RE.finditer(text or "")}
+
+
+def _content_tokens(text: str) -> set[str]:
+    """_tokens() minus stopwords. Used by eval_claimed_facts for overlap math."""
+    return {t for t in _tokens(text) if t not in _STOPWORDS}
 
 
 def _all_channel_texts(brief: dict) -> dict[str, str]:
@@ -88,7 +102,14 @@ def _all_channel_texts(brief: dict) -> dict[str, str]:
 
 
 def _source_text(ctx: dict, source: str) -> str:
-    """Resolve a `chef:<id>` or `segment:<id>` source token to its underlying text."""
+    """Resolve a `chef:<id>` or `segment:<id>` source token to its underlying text.
+
+    Nutrition numerics are emitted in both bare ('28') and unit-suffixed ('28g')
+    forms so that a copy claim like '28g of protein' can be matched against the
+    menu without forcing the LLM to mirror our internal field names. The segment
+    size_estimate is included as a string so claims like '47,000 subscribers'
+    are sourceable to a segment.
+    """
     if not isinstance(source, str) or ":" not in source:
         return ""
     kind, _, _ident = source.partition(":")
@@ -104,6 +125,19 @@ def _source_text(ctx: dict, source: str) -> str:
                 bits.append(ing)
             for flag in dish.get("allergen_safe", []) or []:
                 bits.append(flag.replace("_", " "))
+            calories = dish.get("calories")
+            if calories is not None:
+                bits.append(f"{calories}")
+                bits.append(f"{calories} calories")
+                bits.append(f"{calories}cal")
+                bits.append(f"{calories} cal")
+            protein = dish.get("protein_g")
+            if protein is not None:
+                bits.append(f"{protein}")
+                bits.append(f"{protein}g")
+                bits.append(f"{protein} g")
+                bits.append(f"{protein} grams")
+                bits.append(f"{protein}g protein")
         return " ".join(b for b in bits if b)
     if kind == "segment":
         seg = ctx.get("segment") or {}
@@ -112,6 +146,11 @@ def _source_text(ctx: dict, source: str) -> str:
             seg.get("description", ""),
             " ".join(seg.get("tone_hints", []) or []),
         ]
+        size = seg.get("size_estimate")
+        if size is not None:
+            bits.append(f"{size}")
+            bits.append(f"{size:,}")  # comma-grouped form
+            bits.append(f"{size} subscribers")
         return " ".join(b for b in bits if b)
     return ""
 
@@ -145,10 +184,10 @@ def eval_claimed_facts(brief: dict, ctx: dict) -> EvalResult:
             failures.append(f"claimed_facts[{i}] source '{source}' not resolvable to chef/segment")
             failing_fields.append(f"claimed_facts[{i}].source")
             continue
-        fact_tokens = {t for t in _tokens(fact) if len(t) > 1}
+        fact_tokens = {t for t in _content_tokens(fact) if len(t) > 1}
         if not fact_tokens:
             continue
-        source_tokens = _tokens(source_text)
+        source_tokens = _content_tokens(source_text)
         missing = fact_tokens - source_tokens
         if missing and len(missing) > len(fact_tokens) * 0.25:
             failures.append(
@@ -202,13 +241,11 @@ def _channel_bodies_with_keys(brief: dict) -> list[tuple[str, str]]:
 
 def eval_dietary_contradiction(brief: dict, ctx: dict) -> EvalResult:
     chef = ctx.get("chef") or {}
-    diet_tags = [t for t in (chef.get("dietary_tags") or [])]
-    active: list[str] = []
-    for tag in diet_tags:
-        for diet_key in DIET_FORBIDDEN:
-            if diet_key in tag.lower():
-                active.append(diet_key)
-                break
+    diet_tags = [t.lower() for t in (chef.get("dietary_tags") or [])]
+    # Exact-match against the forbidden-list keys. Substring matching would
+    # mis-activate the vegetarian list for "vegetarian_options" (which only
+    # means the chef offers vegetarian options, not that they are vegetarian).
+    active = [diet_key for diet_key in DIET_FORBIDDEN if diet_key in diet_tags]
     if not active:
         return EvalResult(name="dietary_contradiction", passed=True)
 

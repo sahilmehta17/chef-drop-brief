@@ -26,6 +26,8 @@ sys.path.insert(0, str(ROOT))
 from scripts.load_context import load_context  # noqa: E402
 from scripts.run_evals import (  # noqa: E402
     build_revision_prompt,
+    eval_claimed_facts,
+    eval_dietary_contradiction,
     run_all,
     run_with_revision,
 )
@@ -188,6 +190,46 @@ def test_load_context_unknown_segment_raises_keyerror() -> None:
 def test_load_context_invalid_date_raises_valueerror() -> None:
     with pytest.raises(ValueError, match="Invalid --launch-date"):
         load_context("Maya Patel", "glp1_active", "yesterday")
+
+
+def test_dietary_vegetarian_options_does_not_trigger_vegetarian_list() -> None:
+    """Regression: chef with 'vegetarian_options' tag is NOT vegetarian.
+
+    A brief mentioning shrimp must pass dietary_contradiction. Previously the
+    substring match flagged this as a false positive because 'vegetarian' is a
+    prefix of 'vegetarian_options'.
+    """
+    ctx = {
+        "chef": {
+            "name": "Test Chef",
+            "dietary_tags": ["vegetarian_options", "high_protein"],
+            "menu": [],
+        },
+        "segment": {},
+    }
+    brief = {
+        "email": {"body": "Hot shrimp tonight, {{first_name}}."},
+        "sms": {"body": "Shrimp drop. {{short_url}}"},
+        "push": {"title": "Shrimp landed", "body": "Tap to claim."},
+    }
+    result = eval_dietary_contradiction(brief, ctx)
+    assert result.passed, f"expected pass, got reason={result.reason}"
+
+
+def test_claimed_facts_accepts_numeric_protein_claim() -> None:
+    """Regression: '28g of protein' must be sourceable to a chef with that dish.
+
+    Previously _source_text omitted dish calories/protein_g, so any numeric
+    nutrition claim failed claimed_facts.
+    """
+    ctx = load_context("Maya Patel", "glp1_active", "2026-05-26")
+    brief = {
+        "claimed_facts": [
+            {"fact": "28g of protein", "source": "chef:maya_patel"},
+        ]
+    }
+    result = eval_claimed_facts(brief, ctx)
+    assert result.passed, f"expected pass, got reason={result.reason}"
 
 
 def test_format_braze_cli_emits_three_channels() -> None:
