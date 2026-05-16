@@ -39,3 +39,6 @@ htmlcov/
 # Scratch files written by the skill flow (load_context -> .tmp_ctx.json,
 # brief drafts -> .tmp_brief.json). Deleted at session end; never committed.
 .tmp_*.json
+
+# Claude Code local config (machine-specific permissions, etc.)
+.claude/
