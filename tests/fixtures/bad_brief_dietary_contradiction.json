@@ -1,0 +1,26 @@
+{
+  "chef": "Aisha Bello",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Aisha is plant_based / vegan-tagged. The body mentions beef — should fail dietary_contradiction only.",
+    "email": {
+      "subject_a": "Aisha's smoky beef rib just landed, {{first_name}}",
+      "subject_b": "Aisha's plate dropped tonight — early-access window",
+      "body": "Aisha's smoky beef rib is here, {{first_name}} — and it's not asking for permission. Char, yaji spice, scotch-bonnet kick — the kind of finish that makes the fork work overtime. Not a kit. Just dinner — already cooked by a chef who treats salsa like a base note. Two minutes to plate, full at four. [Add to plan]({{short_url}})",
+      "cta": "Add to plan"
+    },
+    "sms": {
+      "body": "Hey {{first_name}} — Aisha just dropped a smoky beef rib. Char, yaji, done in 2. Tap → {{short_url}}",
+      "cta": "Tap to claim"
+    },
+    "push": {
+      "title": "Aisha's smoky rib just landed",
+      "body": "Tap to add it before Sunday's cutoff."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "Aisha Bello", "source": "chef:aisha_bello" }
+    ]
+  }
+}

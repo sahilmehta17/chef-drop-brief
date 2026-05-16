@@ -21,9 +21,9 @@ import argparse
 import json
 import re
 import sys
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Callable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 

@@ -1,0 +1,26 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Lead with a fabricated credential — should fail claimed_facts only.",
+    "email": {
+      "subject_a": "Three-Michelin-star steak hits CookUnity, {{first_name}}",
+      "subject_b": "Maya's tandoori cauliflower lands Tuesday — early access",
+      "body": "Maya's three-Michelin-star tandoori cauliflower steak is here, {{first_name}} — and it's not asking for permission. Smoke, char, coconut-yogurt finish — the fork works overtime. Not a kit. Just dinner — already cooked. [Add to plan]({{short_url}})",
+      "cta": "Add to plan"
+    },
+    "sms": {
+      "body": "Hey {{first_name}} — Maya's tandoori cauliflower steak just landed. Tap → {{short_url}}",
+      "cta": "Tap to claim"
+    },
+    "push": {
+      "title": "Maya's cauliflower steak just landed",
+      "body": "Tap to add it before Sunday's cutoff."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "three-Michelin-star nuclear physicist sommelier", "source": "chef:maya_patel" }
+    ]
+  }
+}

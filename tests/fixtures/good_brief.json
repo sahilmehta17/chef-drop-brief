@@ -1,0 +1,28 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "GLP-1 subscribers want satiating, protein-forward dinners. Maya's tandoori cauliflower steak hits 18g protein at 380 cal — and the tone leads with the dish, not the diet, per segment constraints.",
+    "email": {
+      "subject_a": "This cauliflower steak doesn't apologize, {{first_name}}",
+      "subject_b": "Maya's tandoori cauliflower lands Tuesday — early access",
+      "body": "Maya's tandoori cauliflower steak is here, {{first_name}} — and it's not asking for permission. Smoke, char, the kind of coconut-yogurt finish that makes the fork work overtime. Not a kit. Just dinner — already cooked by a James Beard alum who lives for the mustard-oil sizzle. Ready in two minutes. Full at four. No takeout night required, and no diet-shaped tradeoffs either. [Add to plan]({{short_url}})",
+      "cta": "Add to plan"
+    },
+    "sms": {
+      "body": "Hey {{first_name}} — Maya's tandoori cauliflower steak just landed. Smoke, char, done in 2. Tap → {{short_url}}",
+      "cta": "Tap to claim"
+    },
+    "push": {
+      "title": "Maya's cauliflower steak just landed",
+      "body": "Tap to add it before Sunday's cutoff."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak inbox open-rate window for the GLP-1 cohort.",
+    "claimed_facts": [
+      { "fact": "Maya Patel", "source": "chef:maya_patel" },
+      { "fact": "Tandoori Cauliflower Steak", "source": "chef:maya_patel" },
+      { "fact": "James Beard Foundation Award", "source": "chef:maya_patel" }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Body includes a banned cliche ('tantalize your taste buds') — should fail banned_cliche only.",
+    "email": {
+      "subject_a": "Maya's cauliflower steak lands Tuesday, {{first_name}}",
+      "subject_b": "Maya's tandoori cauliflower — early access tonight",
+      "body": "Maya's tandoori cauliflower steak will tantalize your taste buds, {{first_name}} — smoke, char, coconut-yogurt finish. Not a kit. Just dinner — already cooked by a James Beard alum. Two minutes to plate. [Add to plan]({{short_url}})",
+      "cta": "Add to plan"
+    },
+    "sms": {
+      "body": "Hey {{first_name}} — Maya's tandoori cauliflower steak just landed. Tap → {{short_url}}",
+      "cta": "Tap to claim"
+    },
+    "push": {
+      "title": "Maya's cauliflower steak just landed",
+      "body": "Tap to add it before Sunday's cutoff."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "Maya Patel", "source": "chef:maya_patel" },
+      { "fact": "Tandoori Cauliflower Steak", "source": "chef:maya_patel" },
+      { "fact": "James Beard Foundation Award", "source": "chef:maya_patel" }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Each channel is missing its CTA marker — should fail cta_presence only.",
+    "email": {
+      "subject_a": "Maya's cauliflower steak just landed, {{first_name}}",
+      "subject_b": "Maya's tandoori cauliflower — early access tonight",
+      "body": "Maya's tandoori cauliflower steak is here, {{first_name}} — and it's not asking for permission. Smoke, char, coconut-yogurt finish — the fork works overtime. Not a kit. Just dinner — already cooked.",
+      "cta": ""
+    },
+    "sms": {
+      "body": "Hey {{first_name}} — Maya's tandoori cauliflower steak just landed. Enjoy.",
+      "cta": "Tap to claim"
+    },
+    "push": {
+      "title": "Maya's cauliflower steak just landed",
+      "body": "Dinner is ready soon for the cohort."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "Maya Patel", "source": "chef:maya_patel" },
+      { "fact": "Tandoori Cauliflower Steak", "source": "chef:maya_patel" }
+    ]
+  }
+}

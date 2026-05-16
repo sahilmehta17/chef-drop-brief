@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -55,8 +55,8 @@ def _default_send_time(launch_date: str) -> str:
     try:
         d = datetime.fromisoformat(launch_date)
     except ValueError:
-        d = datetime.now(timezone.utc)
-    d = d.replace(hour=17, minute=0, second=0, microsecond=0, tzinfo=timezone.utc)
+        d = datetime.now(UTC)
+    d = d.replace(hour=17, minute=0, second=0, microsecond=0, tzinfo=UTC)
     return d.isoformat().replace("+00:00", "Z")
 
 

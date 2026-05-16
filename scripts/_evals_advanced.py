@@ -248,7 +248,7 @@ FOOD_NOUNS = {
     "stew", "kofta", "ceviche", "kibbeh", "pibil", "tagine", "ratatouille",
     "carnitas", "birria", "biryani", "yakitori", "scallion", "scallions",
     "cauliflower", "lentil", "lentils", "lemon", "olive", "tomato",
-    "ribeye", "broth", "yogurt", "broccolini", "rice", "pepper",
+    "ribeye", "broth", "yogurt", "broccolini", "pepper",
     "shrimp", "trout", "octopus", "sardine", "sardines", "fork",
 }
 COINED_WORD = re.compile(

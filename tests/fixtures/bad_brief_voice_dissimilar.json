@@ -1,0 +1,26 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Copy is sterile / compliance-toned — fails brand_voice_similarity only. We keep a single em-dash aside so the voice-signals eval still has a heuristic match, and we keep all CTAs / lengths / facts valid.",
+    "email": {
+      "subject_a": "Subscription dish notification for you, {{first_name}}",
+      "subject_b": "Catalog update reference for your current account",
+      "body": "Dear {{first_name}}. This is a service notification. A new dish from Maya Patel — reference number A-218 — is available for selection. The item is included under your current subscription tier. Please review the catalog and indicate a preference at your earliest convenience. Additional preference details are available through the link below. [Review catalog]({{short_url}})",
+      "cta": "Review catalog"
+    },
+    "sms": {
+      "body": "Notification: a new catalog item is available — reference A-218. Review at {{short_url}}.",
+      "cta": "Review"
+    },
+    "push": {
+      "title": "Subscription update is available",
+      "body": "Tap to review the updated catalog entry."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "Maya Patel", "source": "chef:maya_patel" }
+    ]
+  }
+}

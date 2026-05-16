@@ -1,0 +1,27 @@
+{
+  "chef": "Maya Patel",
+  "segment": "glp1_active",
+  "launch_date": "2026-05-26",
+  "brief": {
+    "rationale": "Copy has no anthro verbs, no wordplay, no Not-Just construction, no em-dash asides — should fail cookunity_voice_signals only.",
+    "email": {
+      "subject_a": "Maya Patel cauliflower steak available now, {{first_name}}",
+      "subject_b": "Maya Patel new cauliflower steak option this week",
+      "body": "A new tandoori cauliflower steak from Maya Patel is now available, {{first_name}}. The dish includes coconut yogurt and is ready in two minutes. To add it to your plan, please tap the link below. [Add to plan]({{short_url}})",
+      "cta": "Add to plan"
+    },
+    "sms": {
+      "body": "Hello {{first_name}}. Tandoori cauliflower steak from Maya Patel is available. Tap to order: {{short_url}}",
+      "cta": "Tap to order"
+    },
+    "push": {
+      "title": "New dish available from Maya Patel",
+      "body": "Tap to view tandoori cauliflower steak today."
+    },
+    "send_time_recommendation": "2026-05-26T17:00:00Z. Launch evening, peak window.",
+    "claimed_facts": [
+      { "fact": "Maya Patel", "source": "chef:maya_patel" },
+      { "fact": "Tandoori Cauliflower Steak", "source": "chef:maya_patel" }
+    ]
+  }
+}
