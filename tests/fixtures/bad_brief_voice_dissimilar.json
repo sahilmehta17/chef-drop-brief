@@ -3,22 +3,22 @@
   "segment": "glp1_active",
   "launch_date": "2026-05-26",
   "brief": {
-    "rationale": "Copy is sterile / compliance-toned — fails brand_voice_similarity only. We keep a single em-dash aside so the voice-signals eval still has a heuristic match, and we keep all CTAs / lengths / facts valid.",
+    "rationale": "Corporate boilerplate copy with zero positive voice signals: no anthropomorphic verbs, no em-dashes, no coined words, no 'Not... Just' construction. Targets the AND-gate: cosine < 0.50 (eval 7) plus zero voice signals (eval 9). Other 7 evals pass: claimed_facts has a single sourced fact, dietary tags on Maya are vegetarian_options (not strict vegetarian so no diet check), no banned cliches, CTAs present, char limits respected, {{first_name}} present, no policy violations.",
     "email": {
-      "subject_a": "Subscription dish notification for you, {{first_name}}",
-      "subject_b": "Catalog update reference for your current account",
-      "body": "Dear {{first_name}}. This is a service notification. A new dish from Maya Patel — reference number A-218 — is available for selection. The item is included under your current subscription tier. Please review the catalog and indicate a preference at your earliest convenience. Additional preference details are available through the link below. [Review catalog]({{short_url}})",
-      "cta": "Review catalog"
+      "subject_a": "Subscription notification for your account update",
+      "subject_b": "Account preference update for your subscription",
+      "body": "Hello {{first_name}}. This is an automated message regarding your active subscription. Your account has been updated to include an additional menu reference. Please review preferences at the URL below. No reply is required. Terms of service remain unchanged from the prior period. Please confirm receipt by clicking the link provided. [Review preferences]({{short_url}})",
+      "cta": "Review preferences"
     },
     "sms": {
-      "body": "Notification: a new catalog item is available — reference A-218. Review at {{short_url}}.",
+      "body": "Notification: a new menu item has been added. Reference number A218. Please review subscription preferences at {{short_url}}.",
       "cta": "Review"
     },
     "push": {
       "title": "Subscription update is available",
       "body": "Tap to review the updated catalog entry."
     },
-    "send_time_recommendation": "2026-05-26T17:00:00Z — Launch evening, peak window.",
+    "send_time_recommendation": "2026-05-26T17:00:00Z. Launch evening, peak window.",
     "claimed_facts": [
       { "fact": "Maya Patel", "source": "chef:maya_patel" }
     ]

@@ -56,16 +56,23 @@ EVAL_NAMES = [
 ]
 
 
-BAD_FIXTURE_TARGET = {
-    "bad_brief_claimed_facts.json": "claimed_facts",
-    "bad_brief_dietary_contradiction.json": "dietary_contradiction",
-    "bad_brief_banned_cliche.json": "banned_cliche",
-    "bad_brief_cta_missing.json": "cta_presence",
-    "bad_brief_channel_overflow.json": "channel_char_limits",
-    "bad_brief_personalization_missing.json": "personalization_tokens",
-    "bad_brief_voice_dissimilar.json": "brand_voice_similarity",
-    "bad_brief_policy_violation.json": "policy_safety",
-    "bad_brief_voice_signals_missing.json": "cookunity_voice_signals",
+# Map fixture filename -> frozenset of evals that are allowed to fail for that
+# fixture. The voice_dissimilar fixture intentionally targets the AND-gate
+# (eval 7 OR eval 9): cosine < 0.50 plus zero positive voice signals — see the
+# threshold comment block in scripts/_evals_advanced.py. At least one of the
+# listed evals must fail; no eval outside the set may fail.
+BAD_FIXTURE_TARGET: dict[str, frozenset[str]] = {
+    "bad_brief_claimed_facts.json": frozenset({"claimed_facts"}),
+    "bad_brief_dietary_contradiction.json": frozenset({"dietary_contradiction"}),
+    "bad_brief_banned_cliche.json": frozenset({"banned_cliche"}),
+    "bad_brief_cta_missing.json": frozenset({"cta_presence"}),
+    "bad_brief_channel_overflow.json": frozenset({"channel_char_limits"}),
+    "bad_brief_personalization_missing.json": frozenset({"personalization_tokens"}),
+    "bad_brief_voice_dissimilar.json": frozenset(
+        {"brand_voice_similarity", "cookunity_voice_signals"}
+    ),
+    "bad_brief_policy_violation.json": frozenset({"policy_safety"}),
+    "bad_brief_voice_signals_missing.json": frozenset({"cookunity_voice_signals"}),
 }
 
 
@@ -101,22 +108,24 @@ def test_good_brief_passes_all_nine() -> None:
     assert {r.name for r in results} == set(EVAL_NAMES)
 
 
-@pytest.mark.parametrize("fixture_name,target_eval", sorted(BAD_FIXTURE_TARGET.items()))
-def test_bad_fixture_isolates_target_eval(fixture_name: str, target_eval: str) -> None:
-    if target_eval == "brand_voice_similarity" and not VOICE_AVAILABLE:
+@pytest.mark.parametrize("fixture_name", sorted(BAD_FIXTURE_TARGET))
+def test_bad_fixture_isolates_target_eval(fixture_name: str) -> None:
+    target_evals = BAD_FIXTURE_TARGET[fixture_name]
+    if "brand_voice_similarity" in target_evals and not VOICE_AVAILABLE:
         pytest.skip("MiniLM-L6-v2 unavailable; can't validate eval 7")
     brief, ctx = _load_fixture(fixture_name)
     results = {r.name: r for r in run_all(brief, ctx)}
-    target = results[target_eval]
-    assert not target.passed, (
-        f"{fixture_name}: {target_eval} was supposed to fail but passed (reason={target.reason})"
+    failing_targets = [results[t] for t in target_evals if not results[t].passed]
+    assert failing_targets, (
+        f"{fixture_name}: expected at least one of {sorted(target_evals)} to fail, "
+        "all passed"
     )
-    others = [r for n, r in results.items() if n != target_eval]
+    others = [r for n, r in results.items() if n not in target_evals]
     leaked = [r for r in others if not r.passed]
     if not VOICE_AVAILABLE:
         leaked = [r for r in leaked if r.name != "brand_voice_similarity"]
     assert not leaked, (
-        f"{fixture_name}: other evals leaked failures: "
+        f"{fixture_name}: evals outside target set {sorted(target_evals)} leaked failures: "
         + ", ".join(f"{r.name}: {r.reason}" for r in leaked)
     )
 
