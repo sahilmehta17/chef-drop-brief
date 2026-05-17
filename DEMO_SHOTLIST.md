@@ -45,25 +45,24 @@ What the viewer sees:
 5. Claude runs `python -m scripts.format_braze` — three Braze campaign JSON
    blocks appear in the output.
 
-## 35–65s — Bad input → eval catches → revision
+## 35–65s — Pre-generation refusal
 
 In the same session, type exactly:
 
 ```
-Run it again with chef "Maya Patel" but segment "carnivore_premium".
+Now do chef "Aïsha Bello" with segment "carnivore_premium", same launch-date.
 ```
 
 What the viewer sees:
-1. First draft mentions a meat dish from Tomás Vega's menu, or claims Maya's
-   menu has carnivore-tagged items.
-2. Eval report flags `dietary_contradiction` (or `claimed_facts` if the model
-   invented a dish) — ✗ visible on screen.
-3. Claude reads `revision_prompt`, regenerates ONLY the failing field
-   (`email.body` / `sms.body` / etc.).
-4. Re-runs evals — **9/9 ✓ after revision**.
-5. Final three Braze JSONs printed.
+1. Claude reads `load_context`.
+2. Claude detects the hard mismatch (vegan menu vs. carnivore segment +
+   "no plant-based framing" constraint).
+3. Claude refuses to generate, presents three recovery paths: re-route chef,
+   re-route segment, or explicit override.
 
-Pause for a beat so the "revision happened" moment lands.
+Narration line (for caption overlay): "Most AI marketing tools auto-ship
+whatever you ask. This one stops you before the model burns a token on a
+campaign that would refund-event your audience."
 
 ## 65–80s — Browser cut: README
 
