@@ -147,7 +147,3 @@ This skill is themed for a CookUnity-style meal-delivery brand, but the eval sui
 5. Optionally retune the threshold in `scripts/_evals_advanced.py` — the docstring shows the math.
 
 Eval 9 (`cookunity_voice_signals`) is brand-specific by design. If your brand doesn't use anthropomorphic verbs or em-dash asides, edit the heuristic in `_evals_advanced.py` to match your voice signature.
-
-## About
-
-Built by [Sahil Mehta](https://github.com/sahilmehta17) as a portfolio attachment for the AI Native Engineer, Growth Marketing role at CookUnity. The eval pattern mirrors what I ship in production at Enidus (T-Mobile copilot, 52 pytest evals gating LLM CSR responses) and in [ClaudeJob](https://github.com/sahilmehta17) (47 unit tests, 30+ banned-cliché regex, source-fact validation against a pinned base).
